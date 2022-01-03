@@ -57,7 +57,7 @@ bcrypt = Bcrypt(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://tansubaktiran:Avz9p9&9Dgsu_099@193.111.73.99/tansubaktiran"
 
 #Secret key
-app.config['SECRET_KEY'] = "$2b$12$P5vdQLFZE.7.Cji.aqKBZOJm8nOL4VT5hP0OWuhHQ216NL5nqAvie"
+app.config['SECRET_KEY'] = "TESTKEY"
 #Initialize the adatabase
 db = SQLAlchemy(app)
 
