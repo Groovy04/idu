@@ -1,0 +1,51 @@
+<style>
+    .error {
+    color: red;
+    border: 2px solid red;
+}
+    .success {
+    color: limegreen;
+    border: 2px solid limegreen;
+}
+
+</style>
+
+{% extends "base.html"%}
+
+{%block content%}
+
+</br></br></br></br>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% for category, message in messages %}
+    <div class="{{ category }}">{{ message }}</div>
+  {% endfor %}
+{% endwith %}
+</br>
+
+<p>Ankete katıldığınız için teşekkür ederim...</p>
+
+<p>Başarılar ve sağlıklı günler... </p>
+
+<div class="shadow p-3 mb-5 bg-body rounded">
+  <form method="POST">
+      <table style="width:100%", id="mytable">
+      {{form.hidden_tag()}}
+      <tr>Online veya yüzyüze eğitimlerde, eğitmeniniz dersin ana kısımları arasında (20-30 dakikadada bir) dersin gidişatı veya ilgi seviyeniz ile ilgili 1-2 soruluk bir anket yapar ise bu sizi nasıl etkiler?</tr>
+      <tr><td>{{form.soru1.label(class="form-label")}}</td></tr>
+      <tr><td>{{form.soru1(class="form-control")}}</td></tr>
+      <tr><td>{{form.soru2.label(class="form-label")}}</td></tr>
+      <tr><td>{{form.soru2(class="form-control")}}</td></tr>
+      <tr><td>{{form.soru3.label(class="form-label")}}</td></tr>
+      <tr><td>{{form.soru3(class="form-control")}}</td></tr>
+      <tr><td></td></tr>
+      <tr><td>{{form.submit(class="btn btn-outline-primary")}}</td></tr>
+      
+      </table>
+    </form>
+    </div>
+
+    
+
+
+{%endblock%} 
