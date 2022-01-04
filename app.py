@@ -57,7 +57,7 @@ bcrypt = Bcrypt(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://tansubaktiran:Avz9p9&9Dgsu_099@193.111.73.99/tansubaktiran"
 
 #Secret key
-app.config['SECRET_KEY'] = "TESTKEY"
+app.config['SECRET_KEY'] = "$2b$12$P5vdQLFZE.7.Cji.aqKBZOJm8nOL4VT5hP0OWuhHQ216NL5nqAvie"
 #Initialize the adatabase
 db = SQLAlchemy(app)
 
@@ -89,9 +89,9 @@ class IDU_db(db.Model, UserMixin): #TO BE UPDATED!!!
 
 class Anket(FlaskForm):
     soru1 = SelectField(label='1. Soru', choices=[("Hiç rahatsız etmez", "Hiç rahatsız etmez"), ("Pek rahatsız etmez", "Pek rahatsız etmez"), ("Fark etmez", "Fark etmez"), ("Biraz rahatsız eder", "Biraz rahatsız eder"),("Çok rahatsız eder", "Çok rahatsız eder")])
-    soru2 = SelectField(label='2. Soru', choices=[("Hiç rahatsız etmez", "Hiç rahatsız etmez"), ("Pek rahatsız etmez", "Pek rahatsız etmez"), ("Fark etmez", "Fark etmez"), ("Biraz rahatsız eder", "Biraz rahatsız eder"),("Çok rahatsız eder", "Çok rahatsız eder")])
-    soru3 = SelectField(label='3. Soru', choices=[("Hiç rahatsız etmez", "Hiç rahatsız etmez"), ("Pek rahatsız etmez", "Pek rahatsız etmez"), ("Fark etmez", "Fark etmez"), ("Biraz rahatsız eder", "Biraz rahatsız eder"),("Çok rahatsız eder", "Çok rahatsız eder")])
-    submit = SubmitField("Save This Entry")
+    soru2 = SelectField(label='2. Soru', choices=[("Çok sık olarak ediyorlar", "Çok sık olarak ediyorlar"), ("Sıkça ediyorlar", "Sıkça ediyorlar"), ("Arada sırada ediyorlar", "Arada sırada ediyorlar"), ("Pek etmiyorlar", "Pek etmiyorlar"),("Hiç etmiyorlar", "Hiç etmiyorlar")])
+    soru3 = SelectField(label='3. Soru', choices=[("Çok faydalı bulurum", "Çok faydalı bulurum"), ("Faydalı bulurum", "Faydalı bulurum"), ("Fark etmediğini düşünüyorum", "Fark etmediğini düşünüyorum"), ("Faydasız buluyorum", "Faydasız buluyorum"),("Çok faydasız buluyorum", "Çok faydasız buluyorum")])
+    submit = SubmitField("Anketi Gönder")
     
 
 
@@ -115,7 +115,8 @@ def index():
 
         db.session.add(new_survey)
         db.session.commit()
-    #flash("Entry recorded successfully! Thank you!", "success")
+
+        flash("Yanıtlarınız kaydedildi. Teşekkür ederim!", "success")
     
     return  render_template("index.html", name=name, number=number, form=form)
     
