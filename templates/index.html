@@ -31,12 +31,19 @@
   <form method="POST">
       <table style="width:100%", id="mytable">
       {{form.hidden_tag()}}
-      <tr>Online veya yüzyüze eğitimlerde, eğitmeniniz dersin ana kısımları arasında (20-30 dakikadada bir) dersin gidişatı veya ilgi seviyeniz ile ilgili 1-2 soruluk bir anket yapar ise bu sizi nasıl etkiler?</tr>
+      
       <tr><td>{{form.soru1.label(class="form-label")}}</td></tr>
+      <tr><td><b>Online veya yüzyüze eğitimlerde, eğitmeniniz dersin ana kısımları arasında (20-30 dakikadada bir) dersin gidişatı veya işlenen konuya ilgi seviyeniz ile ilgili 1-2 soruluk bir anket yapar ise bu sizi nasıl etkiler?</b></td></tr>
       <tr><td>{{form.soru1(class="form-control")}}</td></tr>
+      <tr><td>&nbsp&nbsp</td> </tr>
+      
       <tr><td>{{form.soru2.label(class="form-label")}}</td></tr>
+      <tr><td><b>Online olarak aldığınız derslerinizde eğitmenleriniz online sistem üzerinden (Breakout Rooms vb.) sınıf arkadaşlarınız ile grup çalışmaları / öğrenme aktiviteleri organize ediyor mu?- LÜTFEN TEK BİR DERS İÇİN DEĞİL GENEL OLARAK ALDIĞINIZ ONLINE TÜM EĞİTİMLERİ DÜŞÜNEREK YANITLAYINIZ </b></td></tr>
       <tr><td>{{form.soru2(class="form-control")}}</td></tr>
+      <tr><td>&nbsp&nbsp</td> </tr>
+
       <tr><td>{{form.soru3.label(class="form-label")}}</td></tr>
+      <tr><td><b>Online olarak aldığınız derslerinizde, online sistem üzerinden organize edilen (Breakout Rooms vb.) ve sınıf arkadaşlarınız ile grup çalışmaları yapmanıza imkan veren uygulamaların faydalı olduğunu düşünüyor musunuz? - BU GİBİ ÇALIŞMALARA KATILMADIYSANIZ LÜTFEN YİNE DE FİKRİNİZİ İLETİNİZ</b></td></tr>
       <tr><td>{{form.soru3(class="form-control")}}</td></tr>
       <tr><td></td></tr>
       <tr><td>{{form.submit(class="btn btn-outline-primary")}}</td></tr>
