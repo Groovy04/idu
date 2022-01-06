@@ -99,7 +99,7 @@ class Anket(FlaskForm):
 #////////endof - CUSTOMERS DB
 
 #ROUTES
-@app.route('/')
+@app.route('/', methods=["GET", "POST"])
 @app.route('/index', methods=["GET", "POST"])
 def index():
     name="TEST"
